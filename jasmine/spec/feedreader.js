@@ -15,7 +15,7 @@ $(function() {
     */
     describe('RSS Feeds', function() {
         /* This is our first test - it tests to make sure that the
-         * allFeeds variable has been defined and that it is not
+         *  allFeeds variable has been defined and that it is not
          * empty. Experiment with this before you get started on
          * the rest of this project. What happens when you change
          * allFeeds in app.js to be an empty array and refresh the
@@ -32,11 +32,29 @@ $(function() {
          * and that the URL is not empty.
          */
 
+         it('URL defined', function(){
+            for (var i = 0; i < allFeeds.length; i++){
+                expect(allFeeds[i].url).toBeDefined();
+                expect(allFeeds[i].url).not.toBe(0);
+            }
+
+         });
+
 
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+
+         it('name defined', function(){
+            for (var i = 0; i < allFeeds.length; i++){
+                expect(allFeeds[i].name).toBeDefined();
+                expect(allFeeds[i].name).not.toBe(0);
+            }
+
+         });
+
+
     });
 
 
