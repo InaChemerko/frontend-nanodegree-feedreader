@@ -101,10 +101,27 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
 
-         it 
+        beforeEach(function (done){
+            loadFeed(0, function(){
+              done();  
+            });
+        });
 
+        
+/* it("should do something else when something happens", function() {
+  var fooController = new FooController();
+  spyOn(fooController, "onSomethingHappened");
+  fooController.fooView.trigger("something:happened");
+  expect(fooController.onSomethingHappened).toHaveBeenCalled();
+});*/
+        it('there is at least a single .entry element within the .feed container', function(done){
+            expect($('.feed .entry').length).toBeGreaterThan(0);
+            done();
+        });
 
-     });
+    });
+
+    
 
     /* TODO: Write a new test suite named "New Feed Selection" */
 
@@ -112,4 +129,16 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+
+         describe('New Feed Selection', function (){
+
+            beforeEach(function(done){
+
+            });
+
+            it('content actually changes', function (done){
+
+            });
+
+         });
 }());
