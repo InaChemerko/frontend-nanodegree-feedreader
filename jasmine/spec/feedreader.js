@@ -108,12 +108,6 @@ $(function() {
         });
 
         
-/* it("should do something else when something happens", function() {
-  var fooController = new FooController();
-  spyOn(fooController, "onSomethingHappened");
-  fooController.fooView.trigger("something:happened");
-  expect(fooController.onSomethingHappened).toHaveBeenCalled();
-});*/
         it('there is at least a single .entry element within the .feed container', function(done){
             expect($('.feed .entry').length).toBeGreaterThan(0);
             done();
@@ -132,11 +126,25 @@ $(function() {
 
          describe('New Feed Selection', function (){
 
+            var oldFeed;
+            var newFeed;
+
             beforeEach(function(done){
+                loadFeed(0, function(){
+                    oldFeed = $('.feed').html();
+                    loadFeed(1, function(){
+                        newFeed=$('.feed').html();
+                        done();
+                    });
+                     
+                });
+                
+             });
 
-            });
-
+             
             it('content actually changes', function (done){
+                expect(newFeed).not.toBe(oldFeed);
+                done();
 
             });
 
