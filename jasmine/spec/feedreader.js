@@ -32,10 +32,10 @@ $(function() {
          * and that the URL is not empty.
          */
 
-         it('URL defined', function(){
+         it('URL are defined', function(){
             for (var i = 0; i < allFeeds.length; i++){
-                expect(allFeeds[i].url).toBeDefined();
-                expect(allFeeds[i].url.length).not.toBe(0);
+                expect(allFeeds[i].url).toBeDefined(); //ensures that URL is defined
+                expect(allFeeds[i].url.length).not.toBe(0); //ensures that URL is not empty
             }
 
          });
@@ -46,10 +46,10 @@ $(function() {
          * and that the name is not empty.
          */
 
-         it('name defined', function(){
+         it('names are defined', function(){
             for (var i = 0; i < allFeeds.length; i++){
-                expect(allFeeds[i].name).toBeDefined();
-                expect(allFeeds[i].name.length).not.toBe(0);
+                expect(allFeeds[i].name).toBeDefined();  //ensures that a name is defined
+                expect(allFeeds[i].name.length).not.toBe(0); // ensures that a name is not empty
             }
 
          });
@@ -68,8 +68,8 @@ $(function() {
          * hiding/showing of the menu element.
          */
 
-         it('menu is hidden by default', function() {
-            expect($('body').hasClass('menu-hidden')).toBe(true);
+         it('is hidden by default', function() {
+            expect($('body').hasClass('menu-hidden')).toBe(true); //ensures the menu element is hidden by default
          });
 
          /* TODO: Write a test that ensures the menu changes
@@ -78,14 +78,14 @@ $(function() {
           * clicked and does it hide when clicked again.
           */
 
-          it('menu is changed when the menu icon is clicked', function(){
+          it('is changed when the menu icon is clicked', function(){
             var menuIcon = $('.menu-icon-link');
 
-            menuIcon.click();
-            expect($('body').hasClass('menu-hidden')).toBe(false);
+            menuIcon.click(); //the menu icon is clicked, the 'menu-hidden' class removed
+            expect($('body').hasClass('menu-hidden')).toBe(false); //ensures the menu display
 
-            menuIcon.click();
-            expect($('body').hasClass('menu-hidden')).toBe(true);
+            menuIcon.click(); //the menu icon is clicked, the 'menu-hidden' class added
+            expect($('body').hasClass('menu-hidden')).toBe(true); //ensures the menu is hidden
           });
 
     });
@@ -102,14 +102,14 @@ $(function() {
          */
 
         beforeEach(function (done){
-            loadFeed(0, function(){
+            loadFeed(0, function(){ //call function loadFeed()
               done();  
             });
         });
 
         
-        it('there is at least a single .entry element within the .feed container', function(done){
-            expect($('.feed .entry').length).toBeGreaterThan(0);
+        it('there is at least a single entry element within the container', function(done){
+            expect($('.feed .entry').length).toBeGreaterThan(0); //ensures at least a single entry element
             done();
         });
 
@@ -130,10 +130,10 @@ $(function() {
             var newFeed;
 
             beforeEach(function(done){
-                loadFeed(0, function(){
-                    oldFeed = $('.feed').html();
-                    loadFeed(1, function(){
-                        newFeed=$('.feed').html();
+                loadFeed(0, function(){ //call function loadFeed()
+                    oldFeed = $('.feed').html(); //save content in variable
+                    loadFeed(1, function(){ //call function loadFeed()
+                        newFeed=$('.feed').html(); //save new content in variable
                         done();
                     });
                      
@@ -143,7 +143,7 @@ $(function() {
 
              
             it('content actually changes', function (done){
-                expect(newFeed).not.toBe(oldFeed);
+                expect(newFeed).not.toBe(oldFeed); // ensures content changes
                 done();
 
             });
