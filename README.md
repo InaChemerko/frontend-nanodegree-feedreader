@@ -12,25 +12,16 @@ The user can download or clone ZIP of repository on the local machine and open '
 
  The following tests were written:
 
-* RSS Feeds:
- * URL are defined
+* ***RSS Feeds: URL are defined.*** 
  This test ensures that the URL is defined and not empty.
- * names are defined
- This test ensures that the name is defined and not empty.
+* ***RSS Feeds: names are defined.*** This test ensures that the name is defined and not empty.
 
-* The menu:
- * is hidden by default
- This test ensures that the menu element is hidden by default.
- * is changed when the menu icon is clicked
- This test ensures that the menu changes visibility when the menu icon is clicked.
+* ***The menu: is hidden by default.*** This test ensures that the menu element is hidden by default.
+* ***The menu:is changed when the menu icon is clicked.*** This test ensures that the menu changes visibility when the menu icon is clicked.
 
-* Initial Entries:
- * there is at least a single entry element within the container
- This test ensures that when the loadFeed function is called and completes its work, there is at least a single .entry element within the .feed container.
+* ***Initial Entries: there is at least a single entry element within the container.*** This test ensures that when the loadFeed function is called and completes its work, there is at least a single .entry element within the .feed container.
 
-* New Feed Selection:
- * content actually changes
- This test ensures that the content actually changes when a new feed is loaded.
+* ***New Feed Selection: content actually changes.*** This test ensures that the content actually changes when a new feed is loaded.
 
 
 ## Useful resources
